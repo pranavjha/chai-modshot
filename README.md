@@ -8,7 +8,7 @@
 
 # chai-modshot
 
-> visual regression testing plugin for chai
+> visual regression testing plugin for chai. Uses [modshot](https://www.npmjs.com/package/modshot) to create screenshots and compare them
 
 
 ## How to use
