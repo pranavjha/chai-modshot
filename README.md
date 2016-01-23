@@ -27,15 +27,9 @@ return expect(templatePath).to.be.consistentWith('marko-template-1');
 
 ```
 
-
-## Configuring chai-modshot
-
-
-
-
 ## Installation and Setup
 
-Do an `npm install chai-modshot` to get up and running. Then:
+Do an `npm install chai-modshot` to get up and running. Then use it for assertions.
 
 
 ```javascript
@@ -46,3 +40,44 @@ var chaiModshot = require('chai-modshot');
 chai.use(chaiModshot);
 
 ```
+
+
+
+## Configuring chai-modshot
+
+`chai-modshot` can **optionally** be configures using a configure function as shown below. This should be done before
+the assertions. Also, configuring `chai-modshot` multiple times overrides the previous configurations.
+
+
+```javascript
+require('chai-modshot').configure({
+    outDir: 'shots/units',
+    tolerance: 5,
+    port: 4567,
+    templateType: 'marko',
+    lassoConfig: {
+        plugins: [
+            'lasso-less',
+            'lasso-autoprefixer',
+            'lasso-marko'
+        ],
+        'url-prefix': '/static',
+        outputDir: 'static',
+        fingerprintsEnabled: false,
+        minify: false,
+        bundlingEnabled: false,
+        resolveCssUrls: true,
+        cacheProfile: 'development'
+    }
+});
+
+```
+
+The `.configure` function takes an object with the below keys as parameter:
+
+ - `outDir` (Default: `'shots/units'`) the output directory for screenshots.
+ - `tolerance` (Default: `5`) the percentage deviation with original screenshots upto which, the assertions should not fail.
+ - `port` (Default: `4567`) the port to start the server on.
+ - `templateType` (Default: `'lasso'`) the template engine that should be used. Currently, `marko` and `html` are supported
+ - `lassoConfig` the lasso configuration that should be passed to the template. The default configuration is as in the
+   above example.
