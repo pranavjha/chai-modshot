@@ -12,13 +12,20 @@
         "url": "https://github.com/pranavjha/chai-modshot.git"
     },
     "dependencies": {
-        "modshot": "latest",
-        "bluebird": "latest",
-        "express": "latest",
-        "serve-static": "latest",
-        "fs-extra": "latest",
-        "lodash": "latest",
+        "modshot": "^0.2.2",
+        "bluebird": "^3.1.1",
+        "express": "^4.13.4",
+        "serve-static": "^1.10.2",
+        "fs-extra": "^0.26.4",
+        "lodash": "^4.0.0",
         "nopt": "~3.0.3"
+    },
+    "peerDependencies": {
+        "lasso": "^1.10.0",
+        "lasso-less": "^2.1.1",
+        "lasso-marko": "^2.0.4",
+        "phantomjs": "^1.9.19"
+
     },
     "devDependencies": {
         "grunt": "^0",
