@@ -78,6 +78,6 @@ The `.configure` function takes an object with the below keys as parameter:
  - `outDir` (Default: `'shots/units'`) the output directory for screenshots.
  - `tolerance` (Default: `5`) the percentage deviation with original screenshots upto which, the assertions should not fail.
  - `port` (Default: `4567`) the port to start the server on.
- - `templateType` (Default: `'lasso'`) the template engine that should be used. Currently, `marko` and `html` are supported
+ - `templateType` (Default: `'marko'`) the template engine that should be used. Currently, `marko` and `html` are supported
  - `lassoConfig` the lasso configuration that should be passed to the template. The default configuration is as in the
    above example.

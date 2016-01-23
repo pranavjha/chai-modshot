@@ -1,6 +1,6 @@
 {
     "name": "chai-modshot",
-    "version": "0.0.1-RC1",
+    "version": "0.0.2",
     "description": "visual regression plugin for chai.",
     "main": "./lib",
     "author": "Pranav Jha <jha.pranav.s@gmail.com> (https://github.com/pranavjha)",
