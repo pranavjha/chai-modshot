@@ -45,7 +45,7 @@ chai.use(chaiModshot);
 
 ## Configuring chai-modshot
 
-`chai-modshot` can **optionally** be configures using a configure function as shown below. This should be done before
+`chai-modshot` can **optionally** be configured using a configure function as shown below. This should be done before
 the assertions. Also, configuring `chai-modshot` multiple times overrides the previous configurations.
 
 
