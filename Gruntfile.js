@@ -124,7 +124,7 @@ module.exports = function(grunt) {
                 ]
             },
             coveralls: {
-                options: {
+                lcov: {
                     // LCOV coverage file relevant to every target
                     src: '.coverage/reports/lcov.info'
                 }
@@ -141,7 +141,7 @@ module.exports = function(grunt) {
         'mochaTest',
         'storeCoverage',
         'makeReport',
-        'coveralls'
+        'coveralls:lcov'
     ]);
     grunt.registerTask('document', [
         'docco'
