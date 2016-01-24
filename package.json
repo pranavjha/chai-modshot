@@ -34,7 +34,7 @@
         "grunt-gh-pages": "^1",
         "chai": "^3",
         "grunt-mocha-test": "^0",
-        "grunt-coveralls": "^2.11.6",
+        "grunt-coveralls": "^1.0.0",
         "grunt-istanbul": "^0.6.1",
         "grunt-env": "^0.4.4"
     },
