@@ -1,6 +1,6 @@
 'use strict';
 var chai = require('chai');
-chai.use(require('../lib/index'));
+chai.use(require('../' + (process.env.APP_DIR_FOR_CODE_COVERAGE || '') + 'lib/index'));
 var expect = chai.expect;
 
 /* globals describe, it */

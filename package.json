@@ -25,16 +25,18 @@
         "lasso-less": "^2.1.1",
         "lasso-marko": "^2.0.4",
         "phantomjs": "^1.9.19"
-
     },
     "devDependencies": {
         "grunt": "^0",
         "grunt-contrib-jshint": "^0",
         "grunt-contrib-clean": "^0",
         "grunt-docco": "^0",
-        "grunt-gh-pages": "^0",
-        "chai": "^2",
-        "grunt-mocha-test": "^0"
+        "grunt-gh-pages": "^1",
+        "chai": "^3",
+        "grunt-mocha-test": "^0",
+        "grunt-coveralls": "^2.11.6",
+        "grunt-istanbul": "^0.6.1",
+        "grunt-env": "^0.4.4"
     },
     "keywords": [
         "chai",

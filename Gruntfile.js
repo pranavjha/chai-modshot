@@ -34,6 +34,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-gh-pages');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-istanbul');
+    grunt.loadNpmTasks('grunt-env');
     // Project configuration.
     grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
@@ -64,6 +66,33 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            instrument: {
+                files: [
+                    'lib/**/*.js'
+                ],
+                options: {
+                    lazy: false,
+                    basePath: '.coverage/instrument/'
+                }
+            },
+            storeCoverage: {
+                options: {
+                    dir: '.coverage/json/'
+                }
+            },
+            makeReport: {
+                src: '.coverage/json/*.json',
+                options: {
+                    type: 'lcov',
+                    dir: '.coverage/reports/',
+                    print: 'detail'
+                }
+            },
+            env: {
+                coverage: {
+                    APP_DIR_FOR_CODE_COVERAGE: '.coverage/instrument/'
+                }
+            },
             docco: {
                 debug: {
                     src: [
@@ -92,12 +121,26 @@ module.exports = function(grunt) {
                 src: [
                     '**'
                 ]
+            },
+            coveralls: {
+                options: {
+                    // LCOV coverage file relevant to every target
+                    src: '.coverage/reports/lcov.info'
+                }
             }
         }
     );
     grunt.registerTask('test', [
         'jshint',
         'mochaTest'
+    ]);
+    grunt.registerTask('coverage', [
+        'instrument',
+        'env:coverage',
+        'mochaTest',
+        'storeCoverage',
+        'makeReport',
+        'coveralls'
     ]);
     grunt.registerTask('document', [
         'docco'
