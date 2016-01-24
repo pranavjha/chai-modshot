@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/pranavjha/chai-modshot.svg)](https://travis-ci.org/pranavjha/chai-modshot)
 [![Code Climate](https://codeclimate.com/github/pranavjha/chai-modshot/badges/gpa.svg)](https://codeclimate.com/github/pranavjha/chai-modshot)
+[![Coverage Status](http://img.shields.io/coveralls/pranavjha/chai-modshot.svg)](https://coveralls.io/r/pranavjha/chai-modshot)
+
 
 [![Dependency Status](https://david-dm.org/pranavjha/chai-modshot.svg)](https://david-dm.org/pranavjha/chai-modshot)
 [![devDependency Status](https://david-dm.org/pranavjha/chai-modshot/dev-status.svg)](https://david-dm.org/pranavjha/chai-modshot#info=devDependencies)
