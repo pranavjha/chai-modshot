@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/file_1.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/file_5.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/32px.png"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/40px.png"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/throbber.gif"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/file_7.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="../assets/file_8.css"/>
+    
+
+    
+    <script src="../assets/file_2.js"
+        type="text/javascript"></script>
+    
+    <script src="../assets/file_3.js"
+        type="text/javascript"></script>
+    
+    <script src="../assets/file_4.js"
+        type="text/javascript"></script>
+    
+    <script src="../assets/file_6.js"
+        type="text/javascript"></script>
+    
+
+    <script type="application/json" id="jsTreeJSON">
+        [{"id":"test/fixtures","text":"fixtures","icon":"jstree-folder","parent":"test","a_attr":{"href":"../test/fixtures"},"state":{"opened":false}},{"id":"lib","text":"lib","icon":"jstree-folder","parent":"#","a_attr":{"href":"."},"state":{"opened":true}},{"id":"lib/renderer","text":"renderer","icon":"jstree-folder","parent":"lib","a_attr":{"href":"renderer"},"state":{"opened":false}},{"id":"lib/renderer/html.js","text":"html.js","icon":"jstree-file","parent":"lib/renderer","a_attr":{"href":"renderer/html.js.html"},"state":{"selected":false}},{"id":"lib/renderer/marko.js","text":"marko.js","icon":"jstree-file","parent":"lib/renderer","a_attr":{"href":"renderer/marko.js.html"},"state":{"selected":false}},{"id":"lib/server.js","text":"server.js","icon":"jstree-file","parent":"lib","a_attr":{"href":"server.js.html"},"state":{"selected":false}},{"id":"test","text":"test","icon":"jstree-folder","parent":"#","a_attr":{"href":"../test"},"state":{"opened":false}},{"id":"lib/index.js","text":"index.js","icon":"jstree-file","parent":"lib","a_attr":{"href":"index.js.html"},"state":{"selected":true}},{"id":"test/fixtures/template.html.js","text":"template.html.js","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"../test/fixtures/template.html.js.html"},"state":{"selected":false}},{"id":"test/fixtures/template.marko","text":"template.marko","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"../test/fixtures/template.marko.html"},"state":{"selected":false}},{"id":"test/fixtures/template.marko.js","text":"template.marko.js","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"../test/fixtures/template.marko.js.html"},"state":{"selected":false}},{"id":"test/test.js","text":"test.js","icon":"jstree-file","parent":"test","a_attr":{"href":"../test/test.js.html"},"state":{"selected":false}},{"id":"Gruntfile.js","text":"Gruntfile.js","icon":"jstree-file","parent":"#","a_attr":{"href":"../Gruntfile.js.html"},"state":{"selected":false}},{"id":"README.md","text":"README.md","icon":"jstree-file","parent":"#","a_attr":{"href":"../README.md.html"},"state":{"selected":false}}]
+    </script>
+</head>
+<body class="markdown-body">
+<h1>
+    index
+</h1>
+<div class="subHeading">
+    lib/index.js
+</div>
+<button type="button" class="navigatorToggle">&#9776; files...</button>
+<nav class="navigationTree minimized">
+    <input type="text" id="jsTreeSearch" placeholder="search..."/>
+    <div></div>
+</nav>
+<section>
+    <ul class="sectionDetails ">
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+                <h2 id="plugin-implementation-for-node-">plugin implementation for node.</h2>
+
+            </div><div class="content">
+                <div class="highlight"><pre><span class="hljs-meta">'use strict'</span>;
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">Promise</span> = <span class="hljs-built_in">require</span>(<span class="hljs-string">'bluebird'</span>);
+<span class="hljs-keyword">var</span> exec = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>).exec;
+<span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs-extra'</span>);
+<span class="hljs-keyword">var</span> defaultsDeep = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash/defaultsDeep'</span>);
+<span class="hljs-keyword">var</span> options, configured;
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chaiAccessibility</span>(<span class="hljs-params">chai</span>) </span>{
+    <span class="hljs-keyword">var</span> Assertion = chai.Assertion;
+    Assertion.addMethod(<span class="hljs-string">'consistentWith'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">useCase, selector</span>) </span>{
+        <span class="hljs-keyword">if</span> (!configured) {
+            <span class="hljs-built_in">module</span>.exports.configure();
+        }</pre></div>
+            </div>
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+                <p> extract the templatePath</p>
+
+            </div><div class="content">
+                <div class="highlight"><pre>        <span class="hljs-keyword">var</span> templatePath = <span class="hljs-keyword">this</span>._obj;</pre></div>
+            </div>
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+                <p> create the server</p>
+
+            </div><div class="content">
+                <div class="highlight"><pre>        <span class="hljs-keyword">var</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./server'</span>)(templatePath, options);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>) </span>{</pre></div>
+            </div>
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+                <p> run modshot on the filePath</p>
+
+            </div><div class="content">
+                <div class="highlight"><pre>            process.env.PHANTOMJS_EXECUTABLE = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'phantomjs/bin/phantomjs'</span>);
+            exec(
+                [
+                    path.join(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'modshot/package.json'</span>), <span class="hljs-string">'../bin/modshot.js'</span>),
+                    <span class="hljs-string">'-u'</span>,
+                    <span class="hljs-string">'http://localhost:'</span> + options.port + <span class="hljs-string">'/'</span>,
+                    <span class="hljs-string">'-o'</span>,
+                    options.outDir
+                ].concat(selector ? [
+                    <span class="hljs-string">'-s'</span>,
+                    selector
+                ] : []).concat(useCase ? [
+                    <span class="hljs-string">'-p'</span>,
+                    useCase
+                ] : []).join(<span class="hljs-string">' '</span>),
+                {
+                    cwd: process.cwd(),
+                    env: process.env
+                },
+                <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, stdout</span>) </span>{
+                    server.close();
+                    <span class="hljs-keyword">if</span> (err) {
+                        <span class="hljs-keyword">return</span> reject(err);
+                    }</pre></div>
+            </div>
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+                <p> FIXME: maybe there is a better way?</p>
+
+            </div><div class="content">
+                <div class="highlight"><pre>                    <span class="hljs-keyword">if</span> (stdout.indexOf(<span class="hljs-string">'FAIL'</span>) !== <span class="hljs-number">-1</span>) {
+                        <span class="hljs-keyword">return</span> reject(stdout);
+                    }
+                    <span class="hljs-keyword">return</span> resolve(stdout);
+                }
+            );
+        });
+    });
+};
+
+<span class="hljs-built_in">module</span>.exports.configure = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newOpts</span>) </span>{
+    options = defaultsDeep(newOpts || {}, {
+        outDir: <span class="hljs-string">'shots/units'</span>,
+        tolerance: <span class="hljs-number">5</span>,
+        port: <span class="hljs-number">4567</span>,
+        templateType: <span class="hljs-string">'marko'</span>,
+        lassoConfig: {
+            plugins: [
+                <span class="hljs-string">'lasso-less'</span>,
+                <span class="hljs-string">'lasso-autoprefixer'</span>,
+                <span class="hljs-string">'lasso-marko'</span>
+            ],
+            <span class="hljs-string">'url-prefix'</span>: <span class="hljs-string">'/static'</span>,
+            outputDir: <span class="hljs-string">'static'</span>,
+            fingerprintsEnabled: <span class="hljs-literal">false</span>,
+            minify: <span class="hljs-literal">false</span>,
+            bundlingEnabled: <span class="hljs-literal">false</span>,
+            resolveCssUrls: <span class="hljs-literal">true</span>,
+            cacheProfile: <span class="hljs-string">'development'</span>
+        }
+    });
+    fs.mkdirsSync(path.join(process.cwd(), options.outDir));
+    configured = <span class="hljs-literal">true</span>;
+};</pre></div>
+            </div>
+        </li>
+        
+    </ul>
+</section>
+</body>
+</html>

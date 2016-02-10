@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chai-modshot</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/file_1.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/file_5.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/32px.png"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/40px.png"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/throbber.gif"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/file_7.css"/>
+    
+    <link rel="stylesheet"
+        media="all"
+        href="assets/file_8.css"/>
+    
+
+    
+    <script src="assets/file_2.js"
+        type="text/javascript"></script>
+    
+    <script src="assets/file_3.js"
+        type="text/javascript"></script>
+    
+    <script src="assets/file_4.js"
+        type="text/javascript"></script>
+    
+    <script src="assets/file_6.js"
+        type="text/javascript"></script>
+    
+
+    <script type="application/json" id="jsTreeJSON">
+        [{"id":"test/fixtures","text":"fixtures","icon":"jstree-folder","parent":"test","a_attr":{"href":"test/fixtures"},"state":{"opened":false}},{"id":"lib","text":"lib","icon":"jstree-folder","parent":"#","a_attr":{"href":"lib"},"state":{"opened":false}},{"id":"lib/renderer","text":"renderer","icon":"jstree-folder","parent":"lib","a_attr":{"href":"lib/renderer"},"state":{"opened":false}},{"id":"lib/renderer/html.js","text":"html.js","icon":"jstree-file","parent":"lib/renderer","a_attr":{"href":"lib/renderer/html.js.html"},"state":{"selected":false}},{"id":"lib/renderer/marko.js","text":"marko.js","icon":"jstree-file","parent":"lib/renderer","a_attr":{"href":"lib/renderer/marko.js.html"},"state":{"selected":false}},{"id":"lib/server.js","text":"server.js","icon":"jstree-file","parent":"lib","a_attr":{"href":"lib/server.js.html"},"state":{"selected":false}},{"id":"test","text":"test","icon":"jstree-folder","parent":"#","a_attr":{"href":"test"},"state":{"opened":false}},{"id":"lib/index.js","text":"index.js","icon":"jstree-file","parent":"lib","a_attr":{"href":"lib/index.js.html"},"state":{"selected":false}},{"id":"test/fixtures/template.html.js","text":"template.html.js","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"test/fixtures/template.html.js.html"},"state":{"selected":false}},{"id":"test/fixtures/template.marko","text":"template.marko","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"test/fixtures/template.marko.html"},"state":{"selected":false}},{"id":"test/fixtures/template.marko.js","text":"template.marko.js","icon":"jstree-file","parent":"test/fixtures","a_attr":{"href":"test/fixtures/template.marko.js.html"},"state":{"selected":false}},{"id":"test/test.js","text":"test.js","icon":"jstree-file","parent":"test","a_attr":{"href":"test/test.js.html"},"state":{"selected":false}},{"id":"Gruntfile.js","text":"Gruntfile.js","icon":"jstree-file","parent":"#","a_attr":{"href":"Gruntfile.js.html"},"state":{"selected":false}},{"id":"README.md","text":"README.md","icon":"jstree-file","parent":"#","a_attr":{"href":"README.md.html"},"state":{"selected":true}}]
+    </script>
+</head>
+<body class="markdown-body">
+<h1>
+    chai-modshot
+</h1>
+<div class="subHeading">
+    README.md
+</div>
+<button type="button" class="navigatorToggle">&#9776; files...</button>
+<nav class="navigationTree minimized">
+    <input type="text" id="jsTreeSearch" placeholder="search..."/>
+    <div></div>
+</nav>
+<section>
+    <ul class="sectionDetails docsOnly">
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+                <p><a href="https://travis-ci.org/pranavjha/chai-modshot"><img src="https://img.shields.io/travis/pranavjha/chai-modshot.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/pranavjha/chai-modshot"><img src="https://img.shields.io/codeclimate/github/pranavjha/chai-modshot.svg?style=flat-square" alt="Code Climate"></a>
+<a href="https://coveralls.io/r/pranavjha/chai-modshot"><img src="http://img.shields.io/coveralls/pranavjha/chai-modshot.svg?style=flat-square" alt="Coverage Status"></a>
+<a href="http://pranavjha.github.io/chai-modshot/"><img src="https://img.shields.io/badge/documentation-plus-green.svg?style=flat-square" alt="Documentation"></a></p>
+<p><a href="https://david-dm.org/pranavjha/chai-modshot"><img src="https://img.shields.io/david/pranavjha/chai-modshot.svg?style=flat-square" alt="Dependency Status"></a>
+<a href="https://david-dm.org/pranavjha/chai-modshot#info=devDependencies"><img src="https://img.shields.io/david/dev/pranavjha/chai-modshot.svg?style=flat-square" alt="devDependency Status"></a>
+<a href="https://david-dm.org/pranavjha/chai-modshot#info=peerDependencies"><img src="https://img.shields.io/david/peer/pranavjha/chai-modshot.svg?style=flat-square" alt="peerDependency Status"></a></p>
+<p><a href="https://nodei.co/npm/chai-modshot/"><img src="https://nodei.co/npm/chai-modshot.png" alt="NPM"></a>
+<a href="https://nodei.co/npm/chai-modshot/"><img src="https://nodei.co/npm-dl/chai-modshot.png?months=9&amp;height=1" alt="NPM"></a></p>
+
+<blockquote>
+<p>visual regression testing plugin for chai. Uses <a href="https://www.npmjs.com/package/modshot">modshot</a> to create screenshots and compare them</p>
+</blockquote>
+<h2 id="how-to-use">How to use</h2>
+<p>Can be used with the <code>should</code>, <code>expect</code> or <code>assert</code> interfaces.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// 1. testing an HTML file for visual regression</span>
+<span class="hljs-keyword">var</span> htmlFilePath = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./index.html'</span>);
+<span class="hljs-keyword">return</span> expect(htmlFilePath).to.be.consistentWith(<span class="hljs-string">'html-file-1'</span>);
+
+<span class="hljs-comment">// 2. testing a marko template for visual regression</span>
+<span class="hljs-keyword">var</span> templatePath = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./template.marko'</span>);
+<span class="hljs-keyword">return</span> expect(templatePath).to.be.consistentWith(<span class="hljs-string">'marko-template-1'</span>);
+</code></pre>
+<h2 id="installation-and-setup">Installation and Setup</h2>
+<p>Do an <code>npm install chai-modshot</code> to get up and running. Then use it for assertions.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> chai = <span class="hljs-built_in">require</span>(<span class="hljs-string">'chai'</span>);
+<span class="hljs-keyword">var</span> chaiModshot = <span class="hljs-built_in">require</span>(<span class="hljs-string">'chai-modshot'</span>);
+
+chai.use(chaiModshot);
+</code></pre>
+<h2 id="configuring-chai-modshot">Configuring chai-modshot</h2>
+<p><code>chai-modshot</code> can <strong>optionally</strong> be configured using a configure function as shown below. This should be done before
+the assertions. Also, configuring <code>chai-modshot</code> multiple times overrides the previous configurations.</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">'chai-modshot'</span>).configure({
+    outDir: <span class="hljs-string">'shots/units'</span>,
+    tolerance: <span class="hljs-number">5</span>,
+    port: <span class="hljs-number">4567</span>,
+    templateType: <span class="hljs-string">'marko'</span>,
+    lassoConfig: {
+        plugins: [
+            <span class="hljs-string">'lasso-less'</span>,
+            <span class="hljs-string">'lasso-autoprefixer'</span>,
+            <span class="hljs-string">'lasso-marko'</span>
+        ],
+        <span class="hljs-string">'url-prefix'</span>: <span class="hljs-string">'/static'</span>,
+        outputDir: <span class="hljs-string">'static'</span>,
+        fingerprintsEnabled: <span class="hljs-literal">false</span>,
+        minify: <span class="hljs-literal">false</span>,
+        bundlingEnabled: <span class="hljs-literal">false</span>,
+        resolveCssUrls: <span class="hljs-literal">true</span>,
+        cacheProfile: <span class="hljs-string">'development'</span>
+    }
+});
+</code></pre>
+<p>The <code>.configure</code> function takes an object with the below keys as parameter:</p>
+<ul>
+<li><code>outDir</code> (Default: <code>&#39;shots/units&#39;</code>) the output directory for screenshots.</li>
+<li><code>tolerance</code> (Default: <code>5</code>) the percentage deviation with original screenshots upto which, the assertions should not fail.</li>
+<li><code>port</code> (Default: <code>4567</code>) the port to start the server on.</li>
+<li><code>templateType</code> (Default: <code>&#39;marko&#39;</code>) the template engine that should be used. Currently, <code>marko</code> and <code>html</code> are supported</li>
+<li><code>lassoConfig</code> the lasso configuration that should be passed to the template. The default configuration is as in the
+above example.</li>
+</ul>
+
+            </div><div class="content">
+                
+            </div>
+        </li>
+        
+    </ul>
+</section>
+</body>
+</html>
