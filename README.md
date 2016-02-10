@@ -1,12 +1,14 @@
-[![Build Status](https://travis-ci.org/pranavjha/chai-modshot.svg)](https://travis-ci.org/pranavjha/chai-modshot)
-[![Code Climate](https://codeclimate.com/github/pranavjha/chai-modshot/badges/gpa.svg)](https://codeclimate.com/github/pranavjha/chai-modshot)
-[![Coverage Status](http://img.shields.io/coveralls/pranavjha/chai-modshot.svg)](https://coveralls.io/r/pranavjha/chai-modshot)
+[![Build Status](https://img.shields.io/travis/pranavjha/chai-modshot.svg?style=flat-square)](https://travis-ci.org/pranavjha/chai-modshot)
+[![Code Climate](https://img.shields.io/codeclimate/github/pranavjha/chai-modshot.svg?style=flat-square)](https://codeclimate.com/github/pranavjha/chai-modshot)
+[![Coverage Status](http://img.shields.io/coveralls/pranavjha/chai-modshot.svg?style=flat-square)](https://coveralls.io/r/pranavjha/chai-modshot)
+[![Documentation](https://img.shields.io/badge/documentation-plus-green.svg?style=flat-square)](http://pranavjha.github.io/chai-modshot/)
 
+[![Dependency Status](https://img.shields.io/david/pranavjha/chai-modshot.svg?style=flat-square)](https://david-dm.org/pranavjha/chai-modshot)
+[![devDependency Status](https://img.shields.io/david/dev/pranavjha/chai-modshot.svg?style=flat-square)](https://david-dm.org/pranavjha/chai-modshot#info=devDependencies)
+[![peerDependency Status](https://img.shields.io/david/peer/pranavjha/chai-modshot.svg?style=flat-square)](https://david-dm.org/pranavjha/chai-modshot#info=peerDependencies)
 
-[![Dependency Status](https://david-dm.org/pranavjha/chai-modshot.svg)](https://david-dm.org/pranavjha/chai-modshot)
-[![devDependency Status](https://david-dm.org/pranavjha/chai-modshot/dev-status.svg)](https://david-dm.org/pranavjha/chai-modshot#info=devDependencies)
-[![peerDependency Status](https://david-dm.org/pranavjha/chai-modshot/peer-status.svg)](https://david-dm.org/pranavjha/chai-modshot#info=peerDependencies)
-
+[![NPM](https://nodei.co/npm/chai-modshot.png)](https://nodei.co/npm/chai-modshot/)
+[![NPM](https://nodei.co/npm-dl/chai-modshot.png?months=9&height=1)](https://nodei.co/npm/chai-modshot/)
 
 # chai-modshot
 

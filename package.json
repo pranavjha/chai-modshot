@@ -30,7 +30,7 @@
         "grunt": "^0",
         "grunt-contrib-jshint": "^0",
         "grunt-contrib-clean": "^0",
-        "grunt-docco": "^0",
+        "grunt-docco-plus": "^1",
         "grunt-gh-pages": "^1.0.0",
         "chai": "^3",
         "grunt-mocha-test": "^0",
