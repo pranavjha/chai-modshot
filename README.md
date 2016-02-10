@@ -7,9 +7,6 @@
 [![devDependency Status](https://img.shields.io/david/dev/pranavjha/chai-modshot.svg?style=flat-square)](https://david-dm.org/pranavjha/chai-modshot#info=devDependencies)
 [![peerDependency Status](https://img.shields.io/david/peer/pranavjha/chai-modshot.svg?style=flat-square)](https://david-dm.org/pranavjha/chai-modshot#info=peerDependencies)
 
-[![NPM](https://nodei.co/npm/chai-modshot.png)](https://nodei.co/npm/chai-modshot/)
-[![NPM](https://nodei.co/npm-dl/chai-modshot.png?months=9&height=1)](https://nodei.co/npm/chai-modshot/)
-
 # chai-modshot
 
 > visual regression testing plugin for chai. Uses [modshot](https://www.npmjs.com/package/modshot) to create screenshots and compare them
