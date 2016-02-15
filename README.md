@@ -82,3 +82,30 @@ The `.configure` function takes an object with the below keys as parameter:
  - `templateType` (Default: `'marko'`) the template engine that should be used. Currently, `marko` and `html` are supported
  - `lassoConfig` the lasso configuration that should be passed to the template. The default configuration is as in the
    above example.
+
+
+## Assertions
+
+ __`consistentWith(useCase, selector, millis)`__
+
+
+
+``` javascript
+
+// 1. testing an HTML file for visual regression
+var htmlFilePath = require.resolve('./index.html');
+return expect(htmlFilePath).to.be.consistentWith('html-file-1', 'body', 1000);
+
+// 2. testing a marko template for visual regression
+var templatePath = require.resolve('./template.marko');
+return expect(templatePath).to.be.consistentWith('marko-template-1');
+
+```
+
+__Params__
+
+ - `useCase` the prefix for the file name for the screenshot
+
+ - `selector` the css selector for the element to be checked for visual regression. Can be a `string` or an `Array` of selectors
+
+ - `millis` the number of milliseconds to wait before taking the screenshot.
