@@ -83,7 +83,7 @@
 <span class="hljs-keyword">var</span> options, configured;
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chaiAccessibility</span>(<span class="hljs-params">chai</span>) </span>{
     <span class="hljs-keyword">var</span> Assertion = chai.Assertion;
-    Assertion.addMethod(<span class="hljs-string">'consistentWith'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">useCase, selector</span>) </span>{
+    Assertion.addMethod(<span class="hljs-string">'consistentWith'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">useCase, selector, millis</span>) </span>{
         <span class="hljs-keyword">if</span> (!configured) {
             <span class="hljs-built_in">module</span>.exports.configure();
         }</pre></div>
@@ -103,6 +103,24 @@
         
         <li id="section-3">
             <div class="annotation">
+                <p> normalize the options</p>
+
+            </div><div class="content">
+                <div class="highlight"><pre>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> selector === <span class="hljs-string">'number'</span>) {
+            millis = selector;
+            selector = <span class="hljs-literal">null</span>;
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> selector === <span class="hljs-string">'string'</span>) {
+            selector = [
+                selector
+            ];
+        }</pre></div>
+            </div>
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
                 <p> create the server</p>
 
             </div><div class="content">
@@ -112,7 +130,7 @@
         </li>
         
         
-        <li id="section-4">
+        <li id="section-5">
             <div class="annotation">
                 <p> run modshot on the filePath</p>
 
@@ -125,9 +143,11 @@
                     <span class="hljs-string">'http://localhost:'</span> + options.port + <span class="hljs-string">'/'</span>,
                     <span class="hljs-string">'-o'</span>,
                     options.outDir
-                ].concat(selector ? [
-                    <span class="hljs-string">'-s'</span>,
-                    selector
+                ].concat(selector ? selector.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sel</span>) </span>{
+                    <span class="hljs-keyword">return</span> <span class="hljs-string">'-s '</span> + <span class="hljs-string">'\''</span> + sel + <span class="hljs-string">'\' '</span>;
+                }) : []).concat(millis ? [
+                    <span class="hljs-string">'-m'</span>,
+                    millis
                 ] : []).concat(useCase ? [
                     <span class="hljs-string">'-p'</span>,
                     useCase
@@ -145,13 +165,14 @@
         </li>
         
         
-        <li id="section-5">
+        <li id="section-6">
             <div class="annotation">
                 <p> FIXME: maybe there is a better way?</p>
 
             </div><div class="content">
                 <div class="highlight"><pre>                    <span class="hljs-keyword">if</span> (stdout.indexOf(<span class="hljs-string">'FAIL'</span>) !== <span class="hljs-number">-1</span>) {
-                        <span class="hljs-keyword">return</span> reject(stdout);
+                        <span class="hljs-built_in">console</span>.log(stdout);
+                        <span class="hljs-keyword">return</span> reject(<span class="hljs-string">'visual regression failed!'</span>);
                     }
                     <span class="hljs-keyword">return</span> resolve(stdout);
                 }

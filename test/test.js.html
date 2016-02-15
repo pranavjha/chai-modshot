@@ -79,14 +79,35 @@ chai.use(<span class="hljs-built_in">require</span>(<span class="hljs-string">'.
 <span class="hljs-keyword">var</span> expect = chai.expect;
 
 <span class="hljs-comment">/* globals describe, it */</span>
-describe.only(<span class="hljs-string">'chai-modshot: marko'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+describe(<span class="hljs-string">'chai-modshot: marko'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
 
     it(<span class="hljs-string">'checks a marko template for consistency'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image1'</span>);
     });
 
+    it(<span class="hljs-string">'checks a selector for consistency'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image2'</span>, <span class="hljs-string">'h1'</span>);
+    });
+
+    it(<span class="hljs-string">'checks an array of selectors for consistency'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image3'</span>, [<span class="hljs-string">'h1'</span>, <span class="hljs-string">'h2'</span>]);
+    });
+
+
+    it(<span class="hljs-string">'checks a comma separated list of selectors for consistency'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image3'</span>, <span class="hljs-string">'h1,h2'</span>);
+    });
+
+    it(<span class="hljs-string">'waits for the milliseconds provided before taking the screenshot'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image2'</span>, <span class="hljs-string">'h1'</span>, <span class="hljs-number">200</span>);
+    });
+
+    it(<span class="hljs-string">'waits for the milliseconds provided before taking the screenshot'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.marko'</span>)).to.be.consistentWith(<span class="hljs-string">'image1'</span>, <span class="hljs-number">200</span>);
+    });
+
     it(<span class="hljs-string">'should be visually consistent when rendered as non-modal'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.html'</span>)).to.be.consistentWith(<span class="hljs-string">'image2'</span>);
+        <span class="hljs-keyword">return</span> expect(<span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./fixtures/template.html'</span>)).to.be.consistentWith(<span class="hljs-string">'image6'</span>);
     });
 });</pre></div>
             </div>

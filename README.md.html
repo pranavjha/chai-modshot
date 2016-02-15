@@ -134,6 +134,26 @@ the assertions. Also, configuring <code>chai-modshot</code> multiple times overr
 <li><code>lassoConfig</code> the lasso configuration that should be passed to the template. The default configuration is as in the
 above example.</li>
 </ul>
+<h2 id="assertions">Assertions</h2>
+<p> <strong><code>consistentWith(useCase, selector, millis)</code></strong></p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// 1. testing an HTML file for visual regression</span>
+<span class="hljs-keyword">var</span> htmlFilePath = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./index.html'</span>);
+<span class="hljs-keyword">return</span> expect(htmlFilePath).to.be.consistentWith(<span class="hljs-string">'html-file-1'</span>, <span class="hljs-string">'body'</span>, <span class="hljs-number">1000</span>);
+
+<span class="hljs-comment">// 2. testing a marko template for visual regression</span>
+<span class="hljs-keyword">var</span> templatePath = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./template.marko'</span>);
+<span class="hljs-keyword">return</span> expect(templatePath).to.be.consistentWith(<span class="hljs-string">'marko-template-1'</span>);
+</code></pre>
+<p><strong>Params</strong></p>
+<ul>
+<li><p><code>useCase</code> the prefix for the file name for the screenshot</p>
+</li>
+<li><p><code>selector</code> the css selector for the element to be checked for visual regression. Can be a <code>string</code> or an <code>Array</code> of selectors</p>
+</li>
+<li><p><code>millis</code> the number of milliseconds to wait before taking the screenshot.</p>
+</li>
+</ul>
 
             </div><div class="content">
                 
