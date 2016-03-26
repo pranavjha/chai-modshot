@@ -47,5 +47,8 @@
         "modshot",
         "css"
     ],
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
     "license": "MIT"
 }
