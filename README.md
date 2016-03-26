@@ -86,7 +86,7 @@ The `.configure` function takes an object with the below keys as parameter:
 
 ## Assertions
 
- __`consistentWith(useCase, selector, millis)`__
+ __`consistentWith(useCase, selector, delay)`__
 
 
 
@@ -108,4 +108,4 @@ __Params__
 
  - `selector` the css selector for the element to be checked for visual regression. Can be a `string` or an `Array` of selectors
 
- - `millis` the number of milliseconds to wait before taking the screenshot.
+ - `delay` the number of milliseconds to wait before taking the screenshot.

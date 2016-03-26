@@ -1,6 +1,6 @@
 {
     "name": "chai-modshot",
-    "version": "0.0.5",
+    "version": "0.2.3",
     "description": "visual regression plugin for chai.",
     "main": "./lib",
     "author": "Pranav Jha <jha.pranav.s@gmail.com> (https://github.com/pranavjha)",
@@ -12,7 +12,7 @@
         "url": "https://github.com/pranavjha/chai-modshot.git"
     },
     "dependencies": {
-        "modshot": "^0.2.2",
+        "modshot": "^0.2.3",
         "bluebird": "^3.1.1",
         "express": "^4.13.4",
         "serve-static": "^1.10.2",

@@ -15,9 +15,11 @@ describe('chai-modshot: marko', function() {
     });
 
     it('checks an array of selectors for consistency', function() {
-        return expect(require.resolve('./fixtures/template.marko')).to.be.consistentWith('image3', ['h1', 'h2']);
+        return expect(require.resolve('./fixtures/template.marko')).to.be.consistentWith('image3', [
+            'h1',
+            'h2'
+        ]);
     });
-
 
     it('checks a comma separated list of selectors for consistency', function() {
         return expect(require.resolve('./fixtures/template.marko')).to.be.consistentWith('image3', 'h1,h2');
