@@ -135,7 +135,7 @@ the assertions. Also, configuring <code>chai-modshot</code> multiple times overr
 above example.</li>
 </ul>
 <h2 id="assertions">Assertions</h2>
-<p> <strong><code>consistentWith(useCase, selector, millis)</code></strong></p>
+<p> <strong><code>consistentWith(useCase, selector, delay)</code></strong></p>
 <pre><code class="lang-javascript">
 <span class="hljs-comment">// 1. testing an HTML file for visual regression</span>
 <span class="hljs-keyword">var</span> htmlFilePath = <span class="hljs-built_in">require</span>.resolve(<span class="hljs-string">'./index.html'</span>);
@@ -151,7 +151,7 @@ above example.</li>
 </li>
 <li><p><code>selector</code> the css selector for the element to be checked for visual regression. Can be a <code>string</code> or an <code>Array</code> of selectors</p>
 </li>
-<li><p><code>millis</code> the number of milliseconds to wait before taking the screenshot.</p>
+<li><p><code>delay</code> the number of milliseconds to wait before taking the screenshot.</p>
 </li>
 </ul>
 

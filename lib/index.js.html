@@ -83,7 +83,7 @@
 <span class="hljs-keyword">var</span> options, configured;
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chaiAccessibility</span>(<span class="hljs-params">chai</span>) </span>{
     <span class="hljs-keyword">var</span> Assertion = chai.Assertion;
-    Assertion.addMethod(<span class="hljs-string">'consistentWith'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">useCase, selector, millis</span>) </span>{
+    Assertion.addMethod(<span class="hljs-string">'consistentWith'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">useCase, selector, delay</span>) </span>{
         <span class="hljs-keyword">if</span> (!configured) {
             <span class="hljs-built_in">module</span>.exports.configure();
         }</pre></div>
@@ -107,7 +107,7 @@
 
             </div><div class="content">
                 <div class="highlight"><pre>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> selector === <span class="hljs-string">'number'</span>) {
-            millis = selector;
+            delay = selector;
             selector = <span class="hljs-literal">null</span>;
         }
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> selector === <span class="hljs-string">'string'</span>) {
@@ -145,9 +145,9 @@
                     options.outDir
                 ].concat(selector ? selector.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sel</span>) </span>{
                     <span class="hljs-keyword">return</span> <span class="hljs-string">'-s '</span> + <span class="hljs-string">'\''</span> + sel + <span class="hljs-string">'\' '</span>;
-                }) : []).concat(millis ? [
-                    <span class="hljs-string">'-m'</span>,
-                    millis
+                }) : []).concat(delay ? [
+                    <span class="hljs-string">'--delay'</span>,
+                    delay
                 ] : []).concat(useCase ? [
                     <span class="hljs-string">'-p'</span>,
                     useCase
