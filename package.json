@@ -1,6 +1,6 @@
 {
     "name": "chai-modshot",
-    "version": "0.2.3",
+    "version": "0.2.3-1",
     "description": "visual regression plugin for chai.",
     "main": "./lib",
     "author": "Pranav Jha <jha.pranav.s@gmail.com> (https://github.com/pranavjha)",
@@ -21,10 +21,7 @@
         "nopt": "~3.0.3"
     },
     "peerDependencies": {
-        "lasso": "^1.10.0",
-        "lasso-less": "^2.1.1",
-        "lasso-marko": "^2.0.4",
-        "phantomjs": "^1.9.19"
+        "chai": "^3"
     },
     "devDependencies": {
         "grunt": "^0",
@@ -36,7 +33,12 @@
         "grunt-mocha-test": "^0",
         "grunt-coveralls": "^1.0.0",
         "grunt-istanbul": "^0.6.1",
-        "grunt-env": "^0.4.4"
+        "grunt-env": "^0.4.4",
+        "marko": "^2.8.4",
+        "lasso": "^2",
+        "lasso-less": "^2.1.1",
+        "lasso-marko": "^2.0.4",
+        "phantomjs": "^1.9.19"
     },
     "keywords": [
         "chai",
